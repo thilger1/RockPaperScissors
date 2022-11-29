@@ -1,3 +1,5 @@
+
+
 function getComputerChoice(){
     let answer = Math.floor(Math.random() * 3);
     if (answer == 0){

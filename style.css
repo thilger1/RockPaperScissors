@@ -1,0 +1,19 @@
+
+.flex-container {
+    padding: 16px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.info-container {
+    align-items: center;
+}
+
+.flex-item {
+    background: peachpuff;
+    border: 4px solid salmon;
+    height: 48px;
+    flex: 1;
+    padding: 4px;
+}
