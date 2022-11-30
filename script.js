@@ -39,30 +39,35 @@ function getPlayerChoice(){
 function win(player, computer){
     let playerChoice = player;
     let computerChoice = computer;
-    alert("You win! " + playerChoice + " beats " + computerChoice)
+    let gameInfo = document.getElementById("game-info");
+
+    gameInfo.textContent = "You win! " + playerChoice + " beats " + computerChoice;
     return 1;
 }
 
 function lose(player, computer){
     let playerChoice = player;
     let computerChoice = computer;
-    alert("You lose! " + computerChoice + " beats " + playerChoice)
+    let gameInfo = document.getElementById("game-info");
+
+    gameInfo.textContent = "You win! " + playerChoice + " beats " + computerChoice;
     return 0;
 }
 
-function round(){
-    let computerChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
+function round(player, computer){
 
-    console.log("You chose: " + playerChoice);
-    console.log("Computer chooses: " + computerChoice);
+    
+    let computerChoice = computer;
+    let playerChoice = player;
+    let gameInfo = document.getElementById("game-info");
+
     
     if (computerChoice == playerChoice){
-        alert("Tie!")
+        gameInfo.textContent = playerChoice + " ties " + playerChoice + "!";
     }
     // Computer Rock
-    else if(computerChoice == "Rock"){
-        if (playerChoice == "Paper"){
+    else if(computerChoice == "rock"){
+        if (playerChoice == "paper"){
             win(playerChoice, computerChoice);
         }
         else{
@@ -70,8 +75,8 @@ function round(){
         }
     }
     // Computer Paper
-    else if (computerChoice == "Paper"){
-        if (playerChoice == "Rock"){
+    else if (computerChoice == "paper"){
+        if (playerChoice == "rock"){
             return lose(playerChoice, computerChoice);
         }
         else{
@@ -79,8 +84,8 @@ function round(){
         }
     }
     // Computer Scissors
-    else if (computerChoice == "Scissors"){
-        if (playerChoice == "Rock"){
+    else if (computerChoice == "scissors"){
+        if (playerChoice == "rock"){
             return win(playerChoice, computerChoice);
         }
         else{
@@ -143,6 +148,8 @@ btn.forEach((button) =>{
         if (computerChoice == "scissors"){
             computer.src="images/scissors.png"
         }
+
+        round(playerChoice, computerChoice);
     
     });
 });
