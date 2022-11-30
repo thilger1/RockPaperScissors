@@ -1,4 +1,8 @@
 
+const playerScore = 0;
+const computerScore = 0;
+const showPlayerScore = document.getElementById('playerScore');
+const showComputerScore = document.getElementById('computerScore');
 
 function getComputerChoice(){
     let answer = Math.floor(Math.random() * 3);
@@ -42,7 +46,7 @@ function win(player, computer){
     let gameInfo = document.getElementById("game-info");
 
     gameInfo.textContent = "You win! " + playerChoice + " beats " + computerChoice;
-    return 1;
+    return score(1);
 }
 
 function lose(player, computer){
@@ -50,8 +54,8 @@ function lose(player, computer){
     let computerChoice = computer;
     let gameInfo = document.getElementById("game-info");
 
-    gameInfo.textContent = "You win! " + playerChoice + " beats " + computerChoice;
-    return 0;
+    gameInfo.textContent = "You lost! " + computerChoice + " beats " + playerChoice;
+    return score(0);
 }
 
 function round(player, computer){
@@ -115,6 +119,40 @@ function playRound(games){
 
     }
 
+}
+
+
+
+function score(result){
+    if (playerScore == 5){
+        return reset(1);
+    }
+    else if (computerScore == 5){
+        return reset(0);
+    }
+    else{
+        if (result == 1){
+            playerScore += 1;
+            showPlayerScore.textContent = `You: ${playerScore}`;
+            }
+        if (result == 0){
+            computerScore += 1;
+            showComputerScore.textContent = `Computer: ${computerScore}`; 
+        }
+    }
+    
+}
+
+function reset(result){
+    if (result == 1){
+        alert("Game over, you win!")
+    }
+    else{
+        alert("Game over, you lose!")
+    }
+    playerScore = 0;
+    computerScore = 0;
+    return;
 }
 
 function start(){
