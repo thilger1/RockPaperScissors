@@ -117,4 +117,21 @@ function start(){
     playRound(5)
 }
 
-start()
+const btn = document.querySelectorAll('button');
+const player = document.getElementById('playerChoice');
+
+btn.forEach((button) =>{
+    button.addEventListener('click', function (e) {
+        let choice = button.id
+        if (choice == "rock"){
+            player.src="images/rock.png"
+        }
+        if (choice == "paper"){
+            player.src="images/paper.png"
+        }
+        if (choice == "scissors"){
+            player.src="images/scissors.png"
+        }
+    });
+});
+

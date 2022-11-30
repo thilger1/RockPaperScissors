@@ -44,6 +44,7 @@ img {
     justify-content: center;
     text-align: center;
     display: flex;
+    gap: 150px;
 }
 
 .info-container {
