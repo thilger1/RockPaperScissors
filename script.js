@@ -2,6 +2,7 @@ const player = document.getElementById('playerChoice');
 const computer = document.getElementById('computerChoice');
 
 const gameInfo = document.getElementById("game-info");
+const gameMessage = document.getElementById('game-message');
 const btn = document.querySelectorAll('button');
 let winCount = 0;
 let loseCount = 0;
@@ -9,6 +10,7 @@ let loseCount = 0;
 //displays player choice and random computer choice and plays round
 btn.forEach((button) =>{
     button.addEventListener('click', function (e) {
+
         let playerChoice = button.id
         if (playerChoice == "rock"){
             player.src="images/rock.png"
@@ -90,7 +92,8 @@ function win(player, computer){
     let playerChoice = player;
     let computerChoice = computer;
 
-    gameInfo.textContent = "You win! " + playerChoice + " beats " + computerChoice;
+    gameMessage.textContent = "You win!"
+    gameInfo.textContent = `${capitalize(playerChoice)} beats ${computerChoice}`;
     return score(1);
 }
 
@@ -99,10 +102,10 @@ function lose(player, computer){
     let computerChoice = computer;
     let gameInfo = document.getElementById("game-info");
 
-    gameInfo.textContent = "You lost! " + computerChoice + " beats " + playerChoice;
+    gameMessage.textContent = "You lose!"
+    gameInfo.textContent = `${capitalize(computerChoice)} beats ${playerChoice}`;
     return score(0);
 }
-
 
 function score(result) {
 
@@ -112,18 +115,19 @@ function score(result) {
     if (result == 1){
         winCount += 1;
         playerScore.textContent = `You: ${winCount}`;
+
+        if (winCount == 5){
+            return reset(1);
+        }
+        return;
     }
     if (result == 0){
         loseCount += 1;
-        computerScore.textContent = `Computer: ${loseCount}`; 
-    }
-    if (winCount == 5){
-        return reset(1);
-    }
-    else if (loseCount == 5){
-        return reset(0);
-    }
-    else{
+        computerScore.textContent = `Computer: ${loseCount}`;
+
+        if (loseCount == 5){
+            return reset(0);
+        }
         return;
     }
 }
@@ -137,8 +141,12 @@ function reset(result){
     }
     winCount = 0;
     loseCount = 0;
+    gameMessage.textContent = "Play the computer, best of 5 games";
     return;
 }
 
+function capitalize(word){
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
 
 
