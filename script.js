@@ -3,13 +3,13 @@
 function getComputerChoice(){
     let answer = Math.floor(Math.random() * 3);
     if (answer == 0){
-        answer = 'Rock';
+        answer = 'rock';
     }
     else if (answer == 1){
-        answer = 'Paper';
+        answer = 'paper';
     }
     else {
-        answer = 'Scissors';
+        answer = 'scissors';
     }
     return answer
 }
@@ -119,19 +119,31 @@ function start(){
 
 const btn = document.querySelectorAll('button');
 const player = document.getElementById('playerChoice');
+const computer = document.getElementById('computerChoice');
 
 btn.forEach((button) =>{
     button.addEventListener('click', function (e) {
-        let choice = button.id
-        if (choice == "rock"){
+        let playerChoice = button.id
+        if (playerChoice == "rock"){
             player.src="images/rock.png"
         }
-        if (choice == "paper"){
+        if (playerChoice == "paper"){
             player.src="images/paper.png"
         }
-        if (choice == "scissors"){
+        if (playerChoice == "scissors"){
             player.src="images/scissors.png"
         }
+        let computerChoice = getComputerChoice();
+        if (computerChoice == "rock"){
+            computer.src="images/rock.png"
+        }
+        if (computerChoice == "paper"){
+            computer.src="images/paper.png"
+        }
+        if (computerChoice == "scissors"){
+            computer.src="images/scissors.png"
+        }
+    
     });
 });
 
