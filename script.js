@@ -56,7 +56,10 @@ function round(player, computer){
     let playerChoice = player;
     
     if (computerChoice == playerChoice){
-        gameInfo.textContent = playerChoice + " ties " + playerChoice + "!";
+        console.log(playerChoice);
+        console.log(computerChoice);
+        gameMessage.textContent = "Tie!";
+        gameInfo.textContent = `${capitalize(playerChoice)} ties ${playerChoice}!`;
         return;
     }
     // Computer Rock
@@ -115,21 +118,19 @@ function score(result) {
     if (result == 1){
         winCount += 1;
         playerScore.textContent = `You: ${winCount}`;
-
-        if (winCount == 5){
-            return reset(1);
-        }
-        return;
     }
+    
     if (result == 0){
         loseCount += 1;
         computerScore.textContent = `Computer: ${loseCount}`;
-
-        if (loseCount == 5){
-            return reset(0);
-        }
-        return;
     }
+    if (winCount == 5){
+        return reset(1);
+    }
+    if (loseCount == 5){
+        return reset(0);
+    }
+    return;
 }
 
 function reset(result){
