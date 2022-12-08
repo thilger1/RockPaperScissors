@@ -4,6 +4,15 @@
     --secondary-font: 'Roboto', sans-serif;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+    margin-bottom: 20px;
+}
+
+body {
+    margin-bottom: 100px;
+}
 
 h1 {
     font-family: var(--primary-font);
@@ -11,6 +20,10 @@ h1 {
 }
 
 h2 {
+    font-family: var(--secondary-font);
+}
+
+h3 {
     font-family: var(--secondary-font);
 }
 
@@ -41,6 +54,7 @@ img {
 
 .flex-container {
     padding: 16px;
+    margin-bottom: 5px;
     justify-content: center;
     text-align: center;
     display: flex;
@@ -60,7 +74,25 @@ a {
 }
 
 .footer {
-    height: 60px;
-    padding: 6px;
-    flex: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+    font-size:20px;
+}
+
+.message {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.9;
 }
