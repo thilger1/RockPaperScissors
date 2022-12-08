@@ -44,10 +44,11 @@ h3 {
 
 .btn:hover {
     border-color: var(--main-color);
+    transform: scale(1.05, 1.05)
 }
 
 .btn:active{
-    transform: scale(0.95, 0.95)
+    transform: scale(1, 1)
 }
 
 img {
@@ -80,6 +81,10 @@ a {
     text-decoration: none;
     color: var(--main-color);
     font-weight: bold;
+}
+
+a:hover{
+    transform: scale(1.1, 1.1);
 }
 
 .footer {
