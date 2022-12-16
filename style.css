@@ -42,7 +42,17 @@ h3 {
     border-color:beige;
 }
 
-.btn:hover {
+.secondary-btn{
+    padding:10px;
+    border-radius:10px;
+    background-color: white;
+    border-color:beige;
+    font-family: var(--secondary-font);
+    font-size: 70%;
+
+}
+
+button:hover {
     border-color: var(--main-color);
     transform: scale(1.05, 1.05)
 }
@@ -102,13 +112,14 @@ a:hover{
 
 .message {
     display: none;
-    position: fixed;
-    z-index: 1;
+    position: absolute;
+    float: left;
     top: 50%;
     left: 50%;
     right: 50%;
+    transform: translate(-50%, -50%);
     width: 300px;
-    padding: 50px;
+    padding: 30px;
     border-radius: 10px;
     border-width: 1px;
     border-style: solid;

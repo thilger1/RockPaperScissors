@@ -12,6 +12,7 @@ let loseCount = 0;
 //displays player choice and random computer choice and plays round
 btn.forEach((button) =>{
     button.addEventListener('click', function (e) {
+        
 
         let playerChoice = button.id
         let computerChoice = getComputerChoice();
@@ -135,11 +136,14 @@ function score(result) {
 }
 
 function end(result){
+    let endMessagePar = document.getElementById('endMessagePar');
     if (result == 1){
         endMessageOn();
+        endMessagePar.textContent = "You won!";
     }
     else{
         endMessageOn();
+        endMessagePar.textContent = "You lost!";
     }
     winCount = 0;
     loseCount = 0;
