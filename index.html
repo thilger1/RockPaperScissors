@@ -2,10 +2,67 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Rock Paper Scissors BoilerPlate</title>
-        <script src="script.js">
-        </script>
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.cdnfonts.com/css/black-acute" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/cb73b32785.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <main class="main">
+            <div class="flex-container">
+                <h1>Rock, Paper, Scissors!</h1>
+            </div>
+            <div class="flex-container">
+                <div class="info-container">
+                    <h2 class="info" id="game-message">Start by pressing any button</h2>
+                    <h3 class="info" id="game-info">Play the computer, best of 5 games</h3>
+                    
+                </div>
+            </div>
+            <div class="flex-container">
+                <div class="player">
+                    <img src="images/dash.PNG" class="choice" id="playerChoice">
+                    <h2 class="score" id="playerScore">
+                        You: 0
+                    </h2>
+                </div>
+                <div class="player">
+                    <img src="images/dash.PNG" class="choice" id="computerChoice">
+                    <h2 class="score" id="computerScore">
+                        Computer: 0
+                    </h2>
+                </div>
+            </div>
+            
+            <div class="flex-container">
+                <div class="buttons">
+                    <button class="btn" id="rock" title="Rock">
+                        <div class="choice">
+                            <img src="images/rock.PNG">
+                        </div>
+                    </button>
+                    <button class="btn" id="paper" title="Paper">
+                        <div class="choice">
+                            <img src="images/paper.PNG">
+                        </div>
+                    </button>
+                    <button class="btn" id="scissors" title="Scissors">
+                        <div class="choice">
+                            <img src="images/scissors.PNG">
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <div class="footer">
+            <a href="https://github.com/thilger1" title="Ted Hilger Github account" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            thilger1</a>
+        </div>
+        <div class="message" id="endMessage">
+            <h2 id="endMessagePar"></h2>
+            <button id="reset" class="secondary-btn">Play Again</button>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>

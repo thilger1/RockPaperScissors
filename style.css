@@ -1,0 +1,130 @@
+:root{
+    --main-color: rgb(32, 0, 69);
+    --primary-font: 'Black Acute', sans-serif;
+    --secondary-font: 'Roboto', sans-serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    margin-bottom: 20px;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-family: var(--primary-font);
+    color: var(--main-color);
+}
+
+h2 {
+    font-family: var(--secondary-font);
+}
+
+h3 {
+    font-family: var(--secondary-font);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.btn{
+    height: 200px;
+    width: 200px;
+    padding:10px;
+    border-radius:25px;
+    background-color: white;
+    border-color:beige;
+}
+
+.secondary-btn{
+    padding:10px;
+    border-radius:10px;
+    background-color: white;
+    border-color:beige;
+    font-family: var(--secondary-font);
+    font-size: 70%;
+
+}
+
+button:hover {
+    border-color: var(--main-color);
+    transform: scale(1.05, 1.05)
+}
+
+.btn:active{
+    transform: scale(1, 1)
+}
+
+img {
+    height: 100px;
+    width: 100px;
+    vertical-align: middle;
+}
+
+.choice{
+    font-size: 90px;
+    margin-bottom: 10px;
+}
+
+.flex-container {
+    padding: 16px;
+    margin-bottom: 5px;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    gap: 150px;
+}
+
+.info-container {
+    align-items: center;
+}
+
+a {
+    text-align: bottom;
+    font-family: var(--secondary-font);
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+a:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    padding: 5px;
+    font-size:20px;
+}
+
+.message {
+    display: none;
+    position: absolute;
+    float: left;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:rgb(32, 0, 69);
+    background-color: white;
+    text-align: center;
+    font-size: 30px;
+}
