@@ -18,22 +18,22 @@ btn.forEach((button) =>{
         let computerChoice = getComputerChoice();
 
         if (playerChoice == "rock"){
-            player.src="images/rock.png"
+            player.src="images/rock.PNG"
         }
         if (playerChoice == "paper"){
-            player.src="images/paper.png"
+            player.src="images/paper.PNG"
         }
         if (playerChoice == "scissors"){
-            player.src="images/scissors.png"
+            player.src="images/scissors.PNG"
         }
         if (computerChoice == "rock"){
-            computer.src="images/rock.png"
+            computer.src="images/rock.PNG"
         }
         if (computerChoice == "paper"){
-            computer.src="images/paper.png"
+            computer.src="images/paper.PNG"
         }
         if (computerChoice == "scissors"){
-            computer.src="images/scissors.png"
+            computer.src="images/scissors.PNG"
         }
 
         round(playerChoice, computerChoice);
